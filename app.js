@@ -1,13 +1,12 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 
 const app = express();
-const PORT = 3002;
+const PORT = 3003;
 const SECRET_KEY = 'mi_clave_secreta';
-
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.static('public'));
 
 const users = [
@@ -46,3 +45,5 @@ app.get('/protected', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
